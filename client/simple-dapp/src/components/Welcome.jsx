@@ -83,7 +83,7 @@ const Welcome = () => {
                  <Imput placeholder="Keyword (Gif)" name="keyword " type="text" handleChange={() => {}} />
                  <Imput placeholder="Enter Message" name="message " type="text" handleChange={() => {}} />
                  <hr className="h-[1px] w-full border-gray-400 my-2"/>
-                 {false ?(
+                 {false?(
                   <Loader/>
                  ) : (
                   <button
