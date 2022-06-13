@@ -12,11 +12,11 @@
 const Navbar = () => {
  const [toggleMenu, setToggleMenu] =useState(false)
    return(
-      <nav className='w-ful flex md:justify-centre justify-between items-centre p-4  '>
-         <div className='md:flex-[0.5] flex-initial justify-centre items-centre'>
+      <nav className='w-full flex md:justify-centre lg:justify-center md:justify-evenly  justify-between items-center p-4  '>
+         <div className='md:flex-[0.5] flex-initial justify-centre items-center'>
             <img src={logo} alt="logo" className='w-32 cursor-pointer' />
          </div>
-         <ul className=' text-white md:flex hiddent list-none flex-row justify-between items-centre flex-initial  '>
+         <ul className=' text-white md:flex hidden list-none flex-row justify-between items-center flex-initial  '>
            {['Market', 'Exchange', 'Tutorials', 'Wallets'].map((items, index) => (
               <NavbarItems key={items + index} title={items}/>
            ))}
@@ -29,6 +29,17 @@ const Navbar = () => {
              ? <AiOutlineClose fontSize={28} className="text-white md:hidden cursor-pointer " onClick={() => setToggleMenu(false )} />
              : <HiMenuAlt4 fontSize={28} className="text-white md:hidden cursor-pointer " onClick={() => setToggleMenu(true)} />
             }
+            {toggleMenu &&(
+               <ul>
+                  <li className=' text-xl w-full my-2 '>
+                     <AiOutlineClose onClick={() => setToggleMenu(false) }/>
+                  </li>
+                  {['Market', 'Exchange', 'Tutorials', 'Wallets'].map((items, index) => (
+                       <NavbarItems key={items + index} title={items} classProps='my-2 text-lg' />
+                   ))}
+               </ul>
+            )}
+
          </div>
       </nav>
    );
