@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity ^0.8.0;
-contract transactions{
+contract Transactions{
    uint256 transactionsCount;
 
    event Tranfer( address from, address reciver, uint amount, string message, uint256 timestamp, string keyword );
