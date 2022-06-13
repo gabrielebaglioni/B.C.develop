@@ -8,9 +8,9 @@ const App =() => {
           <Navbar/>
           <Welcome/>
        </div>
-       <Services/>
-       <Transactions/>
-       <Footer/>       
+        <Services/>
+        <Transactions/>
+        <Footer/>       
     </div>
   )
 }

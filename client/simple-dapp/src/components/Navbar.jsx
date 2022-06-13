@@ -10,7 +10,7 @@
    )
  }
 const Navbar = () => {
- const [toggleMenu, setToggleMenu] =useState(false)
+ const [toggleMenu, setToggleMenu] = useState(false)
    return(
       <nav className='w-full flex md:justify-centre lg:justify-center md:justify-evenly  justify-between items-center p-4  '>
          <div className='md:flex-[0.5] flex-initial justify-centre items-center'>
