@@ -5,9 +5,10 @@ import{ BsInfoCircle } from "react-icons/bs";
 import { TransactionContaxt  } from "../context/TransactionContext";
 import { Loader } from './';
 const Welcome = () => { 
-   const {value} = useContext(TransactionContaxt);
-   console.log(value);
 
+   const {connectWallet} = useContext(TransactionContaxt);
+   // console.log(value);
+   
    const commonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
    const Imput = ({placeholder, type, name,  value, handleChange}) => (
       <input
@@ -23,9 +24,7 @@ const Welcome = () => {
    const handleSubmit = () =>{
 
    }
-   const connectWallet = () =>{
-    
-   } 
+  
     
    return(
      <div className="w-full flex justify-center items-center ">
@@ -92,7 +91,7 @@ const Welcome = () => {
                  ) : (
                   <button
                    type="button"
-                   onClick={handleSubmit}
+                   onClick={connectWallet}
                    className= "text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] rounded-full cursor-pointer "
                   >
                     Send Now
