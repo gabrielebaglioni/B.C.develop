@@ -6,7 +6,7 @@ import { TransactionContaxt  } from "../context/TransactionContext";
 import { Loader } from './';
 const Welcome = () => { 
 
-   const {connectWallet} = useContext(TransactionContaxt);
+   const {connectWallet, currentAccount} = useContext(TransactionContaxt);
    // console.log(value);
    
    const commonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
@@ -36,10 +36,13 @@ const Welcome = () => {
               <p className="text-left text-white mt-5 font-light md:w-9/12 w-11/12 text-base">
                Explore the crypro world. Buy and sell cryptocurrencies easely on krypt
               </p>
-              <button type="button" onClick={connectWallet}
+             {!currentAccount &&( 
+             <button  onClick={connectWallet}
+                       type="button" 
                        className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]">
                        <p className=" text-white text-base font-black ">Connect Wallet</p>
               </button>
+              )} 
               <div className="grid sm:grid-cols-3 grid-cols-2 w-full mt-10 ">
                 <div className={`rounded-tl-2xl ${commonStyles}`}>
                     Reliability
@@ -91,7 +94,7 @@ const Welcome = () => {
                  ) : (
                   <button
                    type="button"
-                   onClick={connectWallet}
+                   onClick={handleSubmit}
                    className= "text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] rounded-full cursor-pointer "
                   >
                     Send Now
