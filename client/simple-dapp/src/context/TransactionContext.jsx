@@ -83,7 +83,7 @@ export const TransactionProvider = ({children}) => {
                from: currentAccount,
                to: addressTo,
                gas: '0x5208', // 21000 gwei 
-               value: parsedAmount._hex,  // we have to convert the decimal number from the form in to a gwei number to be accettabile
+               value: parsedAmount._hex,  // we have to convert the decimal number from the form in to a gwei number to be acceptable
             }]
           });
  
